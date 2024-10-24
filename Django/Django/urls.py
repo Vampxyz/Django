@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from .views import greetings, personal_data
+from .views import greetings, products, product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/hello', greetings),
-    path('/datas', personal_data)
+    path('hello/<str:name>/', greetings),
+    path('products/', products),
+    path('product/<str:id>/', product),
 ]
